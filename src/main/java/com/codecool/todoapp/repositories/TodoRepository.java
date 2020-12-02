@@ -1,28 +1,24 @@
 package com.codecool.todoapp.repositories;
 
+import com.codecool.todoapp.model.Status;
 import com.codecool.todoapp.model.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
 
 
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
-    // TODO find all Todos -> return list of all Todos
+    List<Todo> findAllByStatus(Status status);
 
-    // TODO add new new Todo item to database
+    void deleteById(Long id);
 
-    // TODO find Todo by ID -> return Todo item
+    @Transactional
+    void removeAllByStatusEquals(Status status);
 
-    // TODO update Todo item -> void
-
-    // TODO find list of Todos by status -> return list of Todos
-
-    // TODO remove Todo by id -> void
-
-    // TODO remove completed Todo -> void
-
-    // TODO remove toggleStatus -> void
-
-    //TODO remove all toggled -> void
+   Optional<Todo> findById(Long id);
 
 
 }
