@@ -4,7 +4,6 @@ import com.codecool.todoapp.model.Status;
 import com.codecool.todoapp.model.Todo;
 import com.codecool.todoapp.repositories.TodoRepository;
 import com.codecool.todoapp.services.TodoService;
-import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,7 +35,7 @@ public class TodoAppApplication {
             Todo todo2 = Todo.builder()
                     .id((long) 2)
                     .title("Todo2")
-                    .status(Status.ACTIVE)
+                    .status(Status.COMPLETE)
                     .build();
 
             Todo todo3 = Todo.builder()
